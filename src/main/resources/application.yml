@@ -1,0 +1,24 @@
+spring:   #spring.profies.active
+  profiles:
+    active: peer1
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  servlet:
+    context-path: /
+eureka:
+  server:
+    use-read-only-response-cache: false
+    response-cache-auto-expiration-in-seconds: 10
+    prefer-ip-address: false
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false  #保护机制
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
